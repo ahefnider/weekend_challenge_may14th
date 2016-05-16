@@ -1,24 +1,27 @@
-$(document).ready(function() {
-  // event listeners
-  $('#add-cat').on('click', function() {
+$(document).on('ready', function(){
+
+  $('.mdas').on('click', function(){
     event.preventDefault();
     var values = {};
-    $.each($('#inputForm').serializeArray(), function(i, field) {
+    $.each($('#calc').serializeArray(), function(i, field){
       values[field.name] = field.value;
     });
+    values.operation = this.name;
+    console.log(values);
 
     $.ajax({
       type: 'POST',
-      url: '/calculator',
+      url: '/index/' + values.operation,
       data: values,
-      success: function(response) {
-        var addNum = secondNum + firstNum;
-        return addNum;
-        }
+      success: function(response){
+        alert(response);
+        $('.result').text(response);
       }
     })
+  })
+  $('.clearForm').on('click', function(){
+    
 
-  });
+  })
 
-  getData();
-});
+})

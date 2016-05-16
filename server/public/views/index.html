@@ -1,17 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Node Cats</title>
-  <link rel="stylesheet" href="/styles/style.css" />
-  <script type="text/javascript" src="/vendor/jquery.min.js"></script>
+  <title>Calculator</title>
+  <link rel="stylesheet" href="/views/style.css" /> 
+  <script type="text/javascript" src="/vendors/jquery.min.js"></script>
+  <script type="text/javascript" src="/vendors/bootstrap.min.js"></script>
   <script type="text/javascript" src="/scripts/clientapp.js"></script>
 </head>
 <body>
-  First Number:<br>
-  <input type="number" name="firstNum"><br>
-  Second Number:<br>
-  <input type="number" name="secondNum"><br><br>
-  <input type="submit" value="Submit">
-</form>
+  <!-- input form for the first and second number. type is set to numbers so there is no error or something if a person enters letters. -->
+<div class="input">
+  <form id="calc">
+    <input type="number" id="firstNum" name="firstNum" />
+    <input type="number" id="secondNum" name="secondNum" />
+    <input type="submit" class="mdas" name="plus" value="+">
+    <input type="submit" class="mdas" name="minus" value="-">
+    <input type="submit" class="mdas" name="multiply" value="x">
+    <input type="submit" class="mdas" name="divide" value="/">
+    <button class="clearForm">Clear</button>
+  </form>
+</div>
 </body>
 </html>
